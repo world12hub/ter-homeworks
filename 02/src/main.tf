@@ -17,9 +17,9 @@ resource "yandex_compute_instance" "platform" {
   name        = "netology-develop-platform-web"
   platform_id = var.vm_platform_platform_id
   resources {
-    cores         = 2
-    memory        = 1
-    core_fraction = 20
+    cores         = var.vm_platform_cores
+    memory        = var.vm_platform_memory
+    core_fraction = var.vm_platform_core_fraction
   }
   boot_disk {
     initialize_params {
