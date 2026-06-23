@@ -40,10 +40,16 @@ variable "vms_ssh_root_key" {
 }
 
 # OS
+
 variable "vm_web_image_family" {
-  description = "Образ ОС"
   type        = string
   default     = "ubuntu-2004-lts"
+  description = "Образ ОС"
 }
 
+variable "vm_web_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "Образ ОС"
+}
 
