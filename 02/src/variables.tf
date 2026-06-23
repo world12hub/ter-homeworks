@@ -38,3 +38,12 @@ variable "vms_ssh_root_key" {
   default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMXAuAo0E6Kf3HkjszOlEgODfI09LnH634CySKPytGig adminks@vmaltp11"
   description = "ssh-keygen -t ed25519"
 }
+
+# OS
+variable "vm_web_image_family" {
+  description = "Образ ОС"
+  type        = string
+  default     = "ubuntu-2004-lts"
+}
+
+
