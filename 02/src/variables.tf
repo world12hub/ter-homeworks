@@ -53,3 +53,29 @@ variable "vm_web_platform_id" {
   description = "Образ ОС"
 }
 
+variable "vm_platform_cores" {
+  description = "Количество vCPU"
+  type        = number
+  default     = 2
+  description = "Количество vCPU"
+}
+
+variable "vm_platform_memory" {
+  type        = number
+  default     = 1
+  description = "Объем RAM в ГБ"
+}
+
+variable "vm_platform_core_fraction" {
+  type        = number
+  default     = 20
+  description = "Гарантированная доля vCPU"
+}
+
+variable "vm_platform_preemptible" {
+  type        = bool
+  default     = true
+  description = "Прерываемая ВМ"
+}
+
+
