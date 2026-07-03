@@ -54,7 +54,6 @@ variable "vm_web_platform_id" {
 }
 
 variable "vm_platform_cores" {
-  description = "Количество vCPU"
   type        = number
   default     = 2
   description = "Количество vCPU"
