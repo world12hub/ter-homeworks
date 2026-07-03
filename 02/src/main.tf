@@ -17,7 +17,7 @@ data "yandex_compute_image" "ubuntu" {
 
 resource "yandex_compute_instance" "platform" {
   name        = "netology-develop-platform-web"
-  platform_id = var.vm_platform_platform_id
+  platform_id = var.vm_web_platform_id
   resources {
     cores         = var.vm_platform_cores
     memory        = var.vm_platform_memory
@@ -62,7 +62,7 @@ data "yandex_compute_image" "ubuntu-db" {
 
 resource "yandex_compute_instance" "platform-db" {
   name        = "netology-develop-platform-db"
-  platform_id = var.vm_platform_platform_db
+  platform_id = var.vm_db_platform_id
   resources {
     cores         = var.vm_db_platform_cores
     memory        = var.vm_db_platform_memory
