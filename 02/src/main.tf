@@ -18,6 +18,7 @@ data "yandex_compute_image" "ubuntu" {
 
 resource "yandex_compute_instance" "platform" {
   name        = "netology-develop-platform-web"
+  zone        = var.default_zone 
   platform_id = var.vm_web_platform_id
   resources {
     cores         = var.vm_platform_cores
@@ -60,6 +61,7 @@ data "yandex_compute_image" "ubuntu-db" {
 
 resource "yandex_compute_instance" "platform-db" {
   name        = "netology-develop-platform-db"
+  zone        = var.vm_db_default_zone 
   platform_id = var.vm_db_platform_id
   resources {
     cores         = var.vm_db_platform_cores
@@ -75,7 +77,7 @@ resource "yandex_compute_instance" "platform-db" {
     preemptible = true
   }
   network_interface {
-    subnet_id = yandex_vpc_subnet.develop.id
+    subnet_id = yandex_vpc_subnet.db.id
     nat       = true
   }
 
