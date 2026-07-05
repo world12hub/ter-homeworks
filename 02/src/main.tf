@@ -17,7 +17,7 @@ data "yandex_compute_image" "ubuntu" {
 }
 
 resource "yandex_compute_instance" "platform" {
-  name        = "netology-develop-platform-web"
+  name        = local.web_name
   zone        = var.default_zone 
   platform_id = var.vm_web_platform_id
   resources {
@@ -60,7 +60,7 @@ data "yandex_compute_image" "ubuntu-db" {
 }
 
 resource "yandex_compute_instance" "platform-db" {
-  name        = "netology-develop-platform-db"
+  name        = local.db_name
   zone        = var.vm_db_default_zone 
   platform_id = var.vm_db_platform_id
   resources {
