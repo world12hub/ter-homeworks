@@ -36,16 +36,6 @@ variable "vpc_name_develop" {
   description = "VPC network & subnet name"
 }
 
-
-
-###ssh vars
-
-variable "vms_ssh_root_key" {
-  type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMXAuAo0E6Kf3HkjszOlEgODfI09LnH634CySKPytGig adminks@vmaltp11"
-  description = "ssh-keygen -t ed25519"
-}
-
 # OS
 
 variable "vm_web_image_family" {
@@ -75,4 +65,10 @@ variable "vms_resources" {
     core_fraction = number
   }))
   default = {}
+}
+
+variable "metadata" {
+  description = "Общие метаданные для всех виртуальных машин"
+  type        = map(string)
+  default     = {}
 }
