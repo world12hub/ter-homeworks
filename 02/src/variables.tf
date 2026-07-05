@@ -60,24 +60,6 @@ variable "vm_web_platform_id" {
   description = "Образ ОС"
 }
 
-variable "vm_platform_cores" {
-  type        = number
-  default     = 2
-  description = "Количество vCPU"
-}
-
-variable "vm_platform_memory" {
-  type        = number
-  default     = 1
-  description = "Объем RAM в ГБ"
-}
-
-variable "vm_platform_core_fraction" {
-  type        = number
-  default     = 20
-  description = "Гарантированная доля vCPU"
-}
-
 variable "vm_platform_preemptible" {
   type        = bool
   default     = true
@@ -85,3 +67,12 @@ variable "vm_platform_preemptible" {
 }
 
 
+variable "vms_resources" {
+  description = "Конфигурации ресурсов для каждой ВМ"
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {}
+}

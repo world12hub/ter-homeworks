@@ -53,24 +53,6 @@ variable "vm_db_platform_id" {
   description = "Образ ОС"
 }
 
-variable "vm_db_platform_cores" {
-  type        = number
-  default     = 2
-  description = "Количество vCPU"
-}
-
-variable "vm_db_platform_memory" {
-  type        = number
-  default     = 2
-  description = "Объем RAM в ГБ"
-}
-
-variable "vm_db_platform_core_fraction" {
-  type        = number
-  default     = 20
-  description = "Гарантированная доля vCPU"
-}
-
 variable "vm_db_platform_preemptible" {
   type        = bool
   default     = true
