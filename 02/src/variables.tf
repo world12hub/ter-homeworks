@@ -30,6 +30,13 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
+variable "vpc_name_develop" {
+  type        = string
+  default     = "develop"
+  description = "VPC network & subnet name"
+}
+
+
 
 ###ssh vars
 

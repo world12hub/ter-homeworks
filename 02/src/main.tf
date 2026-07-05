@@ -3,6 +3,7 @@
 resource "yandex_vpc_network" "develop" {
   name = var.vpc_name
 }
+
 resource "yandex_vpc_subnet" "develop" {
   name           = var.vpc_name
   zone           = var.default_zone
@@ -45,9 +46,6 @@ resource "yandex_compute_instance" "platform" {
 
 #db
 
-resource "yandex_vpc_network" "db" {
-  name = var.vm_db_vpc_name
-}
 resource "yandex_vpc_subnet" "db" {
   name           = var.vm_db_vpc_name
   zone           = var.vm_db_default_zone
