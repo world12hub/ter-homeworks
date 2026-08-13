@@ -33,6 +33,6 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
+  default     = file("~/.ssh/vm_cloud.pub")
+  description = "ssh-keygen -t vm_cloud"
 }
