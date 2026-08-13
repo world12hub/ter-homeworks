@@ -3,11 +3,13 @@
 
 variable "cloud_id" {
   type        = string
+  default     = "b1gcehnmg326hj1svui2"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
 }
 
 variable "folder_id" {
   type        = string
+  default     = "b1g133inh4mh0get24ds"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
@@ -28,11 +30,45 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
-
-###ssh vars
-
-variable "vms_ssh_root_key" {
+variable "vpc_name_develop" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
+  default     = "develop"
+  description = "VPC network & subnet name"
+}
+
+# OS
+
+variable "vm_web_image_family" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Образ ОС"
+}
+
+variable "vm_web_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "Образ ОС"
+}
+
+variable "vm_platform_preemptible" {
+  type        = bool
+  default     = true
+  description = "Прерываемая ВМ"
+}
+
+
+variable "vms_resources" {
+  description = "Конфигурации ресурсов для каждой ВМ"
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {}
+}
+
+variable "metadata" {
+  description = "Общие метаданные для всех виртуальных машин"
+  type        = map(string)
+  default     = {}
 }
