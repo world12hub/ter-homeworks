@@ -1,5 +1,18 @@
 ###cloud vars
 
+variable "vm_db_default_cidr" {
+  type        = list(string)
+  default     = ["10.0.2.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+variable "vm_db_family_image" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "vm_db_family_image"
+}
+
+
 variable "vm_db_default_zone" {
   type        = string
   default     = "ru-central1-b"
