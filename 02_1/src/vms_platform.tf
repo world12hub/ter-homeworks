@@ -15,7 +15,7 @@ variable "folder_id" {
 
 variable "default_zone" {
   type        = string
-  default     = "ru-central1-a"
+  default     = "ru-central1-b"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
 }
 variable "default_cidr" {
@@ -36,34 +36,34 @@ variable "family_image" {
   description = "family_image"
 }
 
-variable "vm_web_name" {
+variable "vm_db_name" {
   type        = string
-  default     = "netology-develop-platform-web"
-  description = "name_vm_web"
+  default     = "netology-develop-platform-db"
+  description = "name_vm_db"
 }
 
-variable "vm_web_platform_id" {
+variable "vm_db_platform_id" {
   type        = string
   default     = "standard-v3"
-  description = "vm_web_platform_id"
+  description = "vm_db_platform_id"
 }
 
-variable "vm_web_cores" {
+variable "vm_db_cores" {
   type        = string
   default     = "2"
-  description = "vm_web_cores"
+  description = "vm_db_cores"
 }
 
-variable "vm_web_memory" {
+variable "vm_db_memory" {
   type        = string
-  default     = "1"
-  description = "vm_web_memory"
+  default     = "2"
+  description = "vm_db_memory"
 }
 
-variable "vm_web_core_fraction" {
+variable "vm_db_core_fraction" {
   type        = string
   default     = "20"
-  description = "vm_web_core_fraction"
+  description = "vm_db_core_fraction"
 }
 ###ssh vars
 
