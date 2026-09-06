@@ -24,13 +24,6 @@ variable "vm_db_family_image" {
   description = "vm_db_family_image"
 }
 
-
-variable "vm_db_name" {
-  type        = string
-  default     = "netology-develop-platform-db"
-  description = "name_vm_db"
-}
-
 variable "vm_db_platform_id" {
   type        = string
   default     = "standard-v3"

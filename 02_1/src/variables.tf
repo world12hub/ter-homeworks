@@ -36,12 +36,6 @@ variable "family_image" {
   description = "family_image"
 }
 
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "name_vm_web"
-}
-
 variable "vm_web_platform_id" {
   type        = string
   default     = "standard-v3"
