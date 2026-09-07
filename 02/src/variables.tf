@@ -9,7 +9,7 @@ variable "cloud_id" {
 
 variable "folder_id" {
   type        = string
-  default     = "b1g133inh4mh0get24ds"
+  default     = "b1g3dfkpec58ip0g77d6"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
@@ -30,31 +30,35 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
-variable "vpc_name_develop" {
-  type        = string
-  default     = "develop"
-  description = "VPC network & subnet name"
-}
-
-# OS
-
-variable "vm_web_image_family" {
+variable "family_image" {
   type        = string
   default     = "ubuntu-2004-lts"
-  description = "Образ ОС"
+  description = "family_image"
 }
 
 variable "vm_web_platform_id" {
   type        = string
   default     = "standard-v3"
-  description = "Образ ОС"
+  description = "vm_web_platform_id"
 }
 
-variable "vm_platform_preemptible" {
-  type        = bool
-  default     = true
-  description = "Прерываемая ВМ"
-}
+#variable "vm_web_cores" {
+# type        = string
+#  default     = "2"
+#  description = "vm_web_cores"
+#}
+
+#variable "vm_web_memory" {
+#  type        = string
+#  default     = "1"
+#  description = "vm_web_memory"
+#}
+
+#variable "vm_web_core_fraction" {
+#  type        = string
+#  default     = "20"
+#  description = "vm_web_core_fraction"
+#}
 
 
 variable "vms_resources" {
@@ -66,6 +70,8 @@ variable "vms_resources" {
   }))
   default = {}
 }
+
+###ssh vars
 
 variable "metadata" {
   description = "Общие метаданные для всех виртуальных машин"
