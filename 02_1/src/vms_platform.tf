@@ -49,8 +49,8 @@ variable "vm_db_platform_id" {
 #}
 ###ssh vars
 
-variable "vm_db_ssh_root_key" {
-  type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIrOJSguOlh1E0lRQYa2/ROW1inyi8N/AOFBzab30jcJ adminks@vmaltp11"
-  description = "ssh-keygen -t id_ed25519"
-}
+#variable "vm_db_ssh_root_key" {
+#  type        = string
+#  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIrOJSguOlh1E0lRQYa2/ROW1inyi8N/AOFBzab30jcJ adminks@vmaltp11"
+#  description = "ssh-keygen -t id_ed25519"
+#}
