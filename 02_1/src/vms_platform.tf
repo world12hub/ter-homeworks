@@ -30,23 +30,23 @@ variable "vm_db_platform_id" {
   description = "vm_db_platform_id"
 }
 
-variable "vm_db_cores" {
-  type        = string
-  default     = "2"
-  description = "vm_db_cores"
-}
+#variable "vm_db_cores" {
+#  type        = string
+#  default     = "2"
+#  description = "vm_db_cores"
+#}
 
-variable "vm_db_memory" {
-  type        = string
-  default     = "2"
-  description = "vm_db_memory"
-}
+#variable "vm_db_memory" {
+#  type        = string
+#  default     = "2"
+#  description = "vm_db_memory"
+#}
 
-variable "vm_db_core_fraction" {
-  type        = string
-  default     = "20"
-  description = "vm_db_core_fraction"
-}
+#variable "vm_db_core_fraction" {
+#  type        = string
+#  default     = "20"
+#  description = "vm_db_core_fraction"
+#}
 ###ssh vars
 
 variable "vm_db_ssh_root_key" {

@@ -42,23 +42,23 @@ variable "vm_web_platform_id" {
   description = "vm_web_platform_id"
 }
 
-variable "vm_web_cores" {
-  type        = string
-  default     = "2"
-  description = "vm_web_cores"
-}
+#variable "vm_web_cores" {
+# type        = string
+#  default     = "2"
+#  description = "vm_web_cores"
+#}
 
-variable "vm_web_memory" {
-  type        = string
-  default     = "1"
-  description = "vm_web_memory"
-}
+#variable "vm_web_memory" {
+#  type        = string
+#  default     = "1"
+#  description = "vm_web_memory"
+#}
 
-variable "vm_web_core_fraction" {
-  type        = string
-  default     = "20"
-  description = "vm_web_core_fraction"
-}
+#variable "vm_web_core_fraction" {
+#  type        = string
+#  default     = "20"
+#  description = "vm_web_core_fraction"
+#}
 
 
 variable "vms_resources" {
