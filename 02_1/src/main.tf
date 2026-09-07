@@ -14,7 +14,7 @@ data "yandex_compute_image" "ubuntu" {
 }
 
 # web
-resource "yandex_compute_instance" "web" {
+resource "yandex_compute_instance" "platform" {
   name        = local.web_name
   platform_id = var.vm_web_platform_id
   resources {
