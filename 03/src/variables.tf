@@ -63,3 +63,10 @@ variable "metadata" {
   type        = map(string)
   default     = {}
 }
+
+
+# count loop
+variable "instance_count" {
+  default = 2
+  type    = number
+}
