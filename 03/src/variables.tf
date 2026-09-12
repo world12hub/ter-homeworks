@@ -60,6 +60,16 @@ variable "vms_resources" {
   default = {}
 }
 
+variable "each_vm" {
+  type = list(object({
+    vm_name=string
+    cpu=number
+    ram=number
+    disk_volume=number
+  }))
+}
+
+
 ###ssh vars
 
 variable "metadata" {

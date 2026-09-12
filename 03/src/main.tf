@@ -33,7 +33,7 @@ resource "yandex_compute_instance" "platform-bastion" {
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
     nat       = true
-  #  security_group_ids = [yandex_vpc_security_group.example.id]
+    security_group_ids = [yandex_vpc_security_group.example.id]
   #  security_group_ids = count.index == 0 ? [yandex_vpc_security_group.example.id]: []
   }
 
