@@ -1,16 +1,18 @@
 # bd
-resource "yandex_compute_instance" "platform" {
+resource "yandex_compute_instance" "platform-db" {
   for_each = { for vm in var.each_vm : vm.vm_name => vm }
   name        = "${local.db_name}-${each.value.vm_name}"
   platform_id = var.vm_web_platform_id
   resources {
     cores         = each.value.cpu
     memory        = each.value.ram
-    core_fraction = var.vms_resources["web"].core_fraction
+    core_fraction = each.value.core_fraction
   }
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
+      size     = each.value.disk_volume
+      type     = "network-hdd"
     }
   }
   scheduling_policy {

@@ -66,6 +66,7 @@ variable "each_vm" {
     cpu=number
     ram=number
     disk_volume=number
+    core_fraction=number
   }))
 }
 
