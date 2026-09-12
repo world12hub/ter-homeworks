@@ -1,5 +1,6 @@
 # bd
 resource "yandex_compute_instance" "platform-db" {
+  depends_on = [yandex_compute_instance.platform-bastion]
   for_each = { for vm in var.each_vm : vm.vm_name => vm }
   name        = "${local.db_name}-${each.value.vm_name}"
   platform_id = var.vm_web_platform_id

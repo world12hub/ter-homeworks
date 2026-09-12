@@ -85,3 +85,13 @@ variable "instance_count" {
   default = 2
   type    = number
 }
+
+variable "env" {
+  type    = string
+  default = "production" #создавать ли бастион
+}
+
+variable "external_acess_bastion" {
+  type    = bool
+  default = true #false true создавать ли бастион
+}
