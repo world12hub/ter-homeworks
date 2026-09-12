@@ -16,15 +16,6 @@ data "yandex_compute_image" "ubuntu" {
 resource "yandex_compute_instance" "platform-bastion" {
   count = alltrue([var.env == "production", var.external_acess_bastion]) ? 1 : 0
 
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    host        = self.network_interface.0.nat_ip_address #можно конечно и yandex_compute_instance.bastion["network_interface"][0]["nat_ip_address"] но не нужно!
-    private_key = file("~/.ssh/id_ed25519")
-    timeout     = "120s"
-  }
-
-
   name        = local.bastion_name
   platform_id = var.vm_bastion_platform_id
   resources {

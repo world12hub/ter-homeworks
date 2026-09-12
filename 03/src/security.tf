@@ -49,7 +49,7 @@ variable "security_group_egress" {
       description    = "разрешить весь исходящий трафик"
       v4_cidr_blocks = ["0.0.0.0/0"]
       from_port      = 0
-      to_port        = 65365
+      to_port        = 65535
     }
   ]
 }
