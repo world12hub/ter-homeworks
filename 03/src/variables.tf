@@ -43,6 +43,12 @@ variable "vm_web_platform_id" {
   description = "vm_web_platform_id"
 }
 
+variable "vm_bastion_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "vm_web_platform_id"
+}
+
 
 variable "vms_resources" {
   description = "Конфигурации ресурсов для каждой ВМ"
