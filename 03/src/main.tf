@@ -14,7 +14,6 @@ data "yandex_compute_image" "ubuntu" {
 
 # bastion
 resource "yandex_compute_instance" "platform-bastion" {
-  count = var.instance_count
   name        = local.bastion_name
   platform_id = var.vm_bastion_platform_id
   resources {
