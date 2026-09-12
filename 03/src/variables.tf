@@ -32,3 +32,34 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+variable "family_image" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "family_image"
+}
+
+variable "vm_web_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "vm_web_platform_id"
+}
+
+
+variable "vms_resources" {
+  description = "Конфигурации ресурсов для каждой ВМ"
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {}
+}
+
+###ssh vars
+
+variable "metadata" {
+  description = "Общие метаданные для всех виртуальных машин"
+  type        = map(string)
+  default     = {}
+}
