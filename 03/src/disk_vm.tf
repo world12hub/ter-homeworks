@@ -27,13 +27,13 @@ resource "yandex_compute_instance" "storage" {
       disk_id = secondary_disk.value.id
     }
   }
-  
+
   scheduling_policy {
     preemptible = true
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = true
+    nat       = false
   }
 
 metadata = var.metadata
