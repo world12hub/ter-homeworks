@@ -95,3 +95,8 @@ variable "external_acess_bastion" {
   type    = bool
   default = true #false true создавать ли бастион
 }
+
+variable "storage_disk_size" {
+  description = "Размер загрузочного диска ВМ storage, ГБ"
+  type        = number
+}

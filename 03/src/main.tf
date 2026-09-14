@@ -13,10 +13,11 @@ data "yandex_compute_image" "ubuntu" {
 }
 
 # bastion
-resource "yandex_compute_instance" "platform-bastion" {
+resource "yandex_compute_instance" "bastion" {
   count = alltrue([var.env == "production", var.external_acess_bastion]) ? 1 : 0
 
   name        = local.bastion_name
+  hostname        = local.bastion_name
   platform_id = var.vm_bastion_platform_id
   resources {
     cores         = var.vms_resources["web"].cores
