@@ -17,7 +17,7 @@ resource "yandex_compute_instance" "bastion" {
   count = alltrue([var.env == "production", var.external_acess_bastion]) ? 1 : 0
 
   name        = local.bastion_name
-  hostname        = local.bastion_name
+  hostname    = local.bastion_name
   platform_id = var.vm_bastion_platform_id
   resources {
     cores         = var.vms_resources["web"].cores
@@ -39,6 +39,7 @@ resource "yandex_compute_instance" "bastion" {
   #  security_group_ids = count.index == 0 ? [yandex_vpc_security_group.example.id]: []
   }
 
-metadata = var.metadata
+allow_stopping_for_update = true
+metadata                  = var.metadata
 
 }

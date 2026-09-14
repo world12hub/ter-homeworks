@@ -20,6 +20,14 @@ resource "yandex_compute_instance" "storage" {
       image_id = data.yandex_compute_image.ubuntu.image_id
     }
   }
+
+  dynamic "secondary_disk" {
+    for_each = yandex_compute_disk.disk
+    content {
+      disk_id = secondary_disk.value.id
+    }
+  }
+  
   scheduling_policy {
     preemptible = true
   }
