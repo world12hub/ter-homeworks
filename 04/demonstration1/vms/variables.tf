@@ -45,6 +45,11 @@ variable "cidr_develop_b" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
+variable "username" {
+  type        = string
+  description = "Имя пользователя в ВМ"
+  default     = "ubuntu"
+}
 
 variable "ssh_public_key" {
   type    = string

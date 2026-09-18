@@ -68,7 +68,8 @@ module "example-vm" {
 data "template_file" "cloudinit" {
   template = file("./cloud-init.yml")
   vars = {
-    ssh_public_key = file(var.ssh_public_key)
+    username       = var.username
+    ssh_public_key = var.ssh_public_key
   }
 }
 
