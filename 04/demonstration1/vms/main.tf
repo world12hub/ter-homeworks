@@ -54,8 +54,8 @@ module "example-vm" {
   public_ip      = true
 
   labels = { 
-      owner= "i.ivanov",
-      project = "accounting"
+      owner= "s.kanyugin",
+      project = "analytics"
       }
   metadata = {
     user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
