@@ -31,8 +31,8 @@ module "test-vm" {
   public_ip      = true
 
   labels = { 
-    owner= "i.ivanov",
-    project = "accounting"
+    owner= "s.kanyugin",
+    project = "marketing"
      }
 
   metadata = {
@@ -53,6 +53,10 @@ module "example-vm" {
   image_family   = "ubuntu-2004-lts"
   public_ip      = true
 
+  labels = { 
+      owner= "i.ivanov",
+      project = "accounting"
+      }
   metadata = {
     user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
     serial-port-enable = 1
