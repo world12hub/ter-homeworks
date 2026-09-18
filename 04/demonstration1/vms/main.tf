@@ -1,21 +1,21 @@
 #создаем облачную сеть
 resource "yandex_vpc_network" "develop" {
-  name = "develop"
+  name = var.vpc_name
 }
 
 #создаем подсеть
 resource "yandex_vpc_subnet" "develop_a" {
-  name           = "develop-ru-central1-a"
-  zone           = "ru-central1-a"
+  name           = local.subnet_name_develop_a
+  zone           = var.zone-a
   network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = ["10.0.1.0/24"]
+  v4_cidr_blocks = var.cidr_develop_a
 }
 
 resource "yandex_vpc_subnet" "develop_b" {
-  name           = "develop-ru-central1-b"
-  zone           = "ru-central1-b"
+  name           = local.subnet_name_develop_b
+  zone           = var.zone-b
   network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = ["10.0.2.0/24"]
+  v4_cidr_blocks = var.cidr_develop_b
 }
 
 
@@ -67,5 +67,8 @@ module "example-vm" {
 #Пример передачи cloud-config в ВМ для демонстрации №3
 data "template_file" "cloudinit" {
   template = file("./cloud-init.yml")
+  vars = {
+    ssh_public_key = file(var.ssh_public_key)
+  }
 }
 
