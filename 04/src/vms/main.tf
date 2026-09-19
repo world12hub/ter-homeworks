@@ -34,7 +34,7 @@ module "test-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = "develop" 
   network_id     = module.vpc.network.id
-  subnet_zones   = ["ru-central1-a"]
+  subnet_zones   = [module.vpc.subnet.zone]
   subnet_ids     = [module.vpc.subnet.id] 
   instance_name  = "webs"
   instance_count = 2
@@ -56,9 +56,9 @@ module "test-vm" {
 module "example-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = "stage"
-  network_id     = module.vpc.network.id  
-  subnet_zones   = ["ru-central1-a"]
-  subnet_ids     = [module.vpc.subnet.id] 
+  network_id     = module.vpc.network.id
+  subnet_zones   = [module.vpc.subnet.zone]
+  subnet_ids     = [module.vpc.subnet.id]  
   instance_name  = "web-stage"
   instance_count = 1
   image_family   = "ubuntu-2004-lts"
