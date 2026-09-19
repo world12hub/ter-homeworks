@@ -1,30 +1,41 @@
-#создаем облачную сеть
-resource "yandex_vpc_network" "develop" {
-  name = var.vpc_name
+# #создаем облачную сеть
+# resource "yandex_vpc_network" "develop" {
+#   name = var.vpc_name
+# }
+
+# #создаем подсеть
+# resource "yandex_vpc_subnet" "develop_a" {
+#   name           = local.subnet_name_develop_a
+#   zone           = var.zone-a
+#   network_id     = yandex_vpc_network.develop.id
+#   v4_cidr_blocks = var.cidr_develop_a
+# }
+
+# resource "yandex_vpc_subnet" "develop_b" {
+#   name           = local.subnet_name_develop_b
+#   zone           = var.zone-b
+#   network_id     = yandex_vpc_network.develop.id
+#   v4_cidr_blocks = var.cidr_develop_b
+# }
+
+module "vpc" {
+  source = "./modules/vpc"
+
+  vpc_name   = "develop"
+  zone           = "ru-central1-a"
+  v4_cidr_blocks = ["10.0.1.0/24"]
 }
 
-#создаем подсеть
-resource "yandex_vpc_subnet" "develop_a" {
-  name           = local.subnet_name_develop_a
-  zone           = var.zone-a
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.cidr_develop_a
+output "vpc_dev_subnet" {
+  value = module.vpc.subnet
 }
-
-resource "yandex_vpc_subnet" "develop_b" {
-  name           = local.subnet_name_develop_b
-  zone           = var.zone-b
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.cidr_develop_b
-}
-
 
 module "test-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = "develop" 
-  network_id     = yandex_vpc_network.develop.id
-  subnet_zones   = ["ru-central1-a","ru-central1-b"]
-  subnet_ids     = [yandex_vpc_subnet.develop_a.id,yandex_vpc_subnet.develop_b.id]
+  network_id     = module.vpc.network.id
+  subnet_zones   = ["ru-central1-a"]
+  subnet_ids     = [module.vpc.subnet.id] 
   instance_name  = "webs"
   instance_count = 2
   image_family   = "ubuntu-2004-lts"
@@ -45,9 +56,9 @@ module "test-vm" {
 module "example-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
   env_name       = "stage"
-  network_id     = yandex_vpc_network.develop.id
+  network_id     = module.vpc.network.id  
   subnet_zones   = ["ru-central1-a"]
-  subnet_ids     = [yandex_vpc_subnet.develop_a.id]
+  subnet_ids     = [module.vpc.subnet.id] 
   instance_name  = "web-stage"
   instance_count = 1
   image_family   = "ubuntu-2004-lts"
