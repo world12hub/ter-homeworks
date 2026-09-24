@@ -5,6 +5,31 @@ terraform {
     }
   }
   required_version = ">=1.15.0"
+  
+  backend "s3" {
+    
+    shared_credentials_files = ["~/.aws/credentials"]
+    profile                  = "default"
+    region                   = "ru-central1"
+
+    bucket  = "tfstate-develop" # FIO-netology-tfstate
+    key     = "dev1/dev1-terraform.tfstate"
+    encrypt = false
+
+    # НОВОЕ: Встроенный механизм блокировок (Terraform >= 1.6)
+    # Не требует отдельной базы данных (DynamoDB/YDB)!
+    use_lockfile = true
+
+    skip_credentials_validation = true
+    skip_region_validation      = true
+    skip_requesting_account_id  = true
+    skip_s3_checksum            = true
+    
+    endpoints = {
+      s3 = "https://storage.yandexcloud.net"
+    }
+  }
+  
 }
 
 provider "yandex" {
