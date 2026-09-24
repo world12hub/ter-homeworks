@@ -55,7 +55,7 @@ resource "yandex_vpc_security_group" "vm_sg" {
 }
 
 module "test-vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance/releases/tag/v2.0.0"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=a230c79"
   env_name       = "develop" 
   network_id     = module.vpc.network.id
   subnet_zones   = [module.vpc.subnet.zone]
@@ -79,7 +79,7 @@ module "test-vm" {
 }
 
 module "example-vm" {
-  source         = "git::https://github.com/udjin10/yandex_compute_instance/releases/tag/v2.0.0"
+  source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=a230c79"
   env_name       = "stage"
   network_id     = module.vpc.network.id
   subnet_zones   = [module.vpc.subnet.zone]
