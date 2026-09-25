@@ -50,7 +50,7 @@ variable "ssh_public_key" {
   description = "ssh public key"
 }
 
-variable "ip" {
+/* variable "ip" {
   type        = string
   description = "ip-адрес"
 
@@ -62,8 +62,8 @@ variable "ip" {
     error_message = "Значение должно быть корректным IPv4-адресом, например 192.168.0.1."
   }
 }
-
-variable "ips" {
+*/
+/*variable "ips" {
   type        = list(string)
   description = "список ip-адресов"
 
@@ -78,8 +78,8 @@ variable "ips" {
     error_message = "Все элементы списка должны быть корректными IPv4-адресами."
   }
 }
-
-variable "ip" {
+*/
+/*variable "ip" {
   type        = string
   description = "ip-адрес"
   default     = "1920.1680.0.1"   # неверный IP
@@ -89,8 +89,8 @@ variable "ip" {
     error_message = "Значение должно быть корректным IPv4-адресом, например 192.168.0.1."
   }
 }
-
-
+*/
+/*
 variable "ips" {
   type        = list(string)
   description = "список ip-адресов"
@@ -104,3 +104,4 @@ variable "ips" {
     error_message = "Все элементы списка должны быть корректными IPv4-адресами."
   }
 }
+*/
