@@ -49,3 +49,59 @@ variable "ssh_public_key" {
   type    = string
   description = "ssh public key"
 }
+
+/* variable "ip" {
+  type        = string
+  description = "ip-адрес"
+
+  # Верное значение
+  default = "192.168.0.1"
+
+  validation {
+    condition     = can(cidrhost("${var.ip}/32", 0)) && cidrhost("${var.ip}/32", 0) == var.ip
+    error_message = "Значение должно быть корректным IPv4-адресом, например 192.168.0.1."
+  }
+}
+*/
+/*variable "ips" {
+  type        = list(string)
+  description = "список ip-адресов"
+
+  # Верные значения
+  default = ["192.168.0.1", "1.1.1.1", "127.0.0.1"]
+
+  validation {
+    condition = alltrue([
+      for ip in var.ips :
+      can(cidrhost("${ip}/32", 0)) && cidrhost("${ip}/32", 0) == ip
+    ])
+    error_message = "Все элементы списка должны быть корректными IPv4-адресами."
+  }
+}
+*/
+/*variable "ip" {
+  type        = string
+  description = "ip-адрес"
+  default     = "1920.1680.0.1"   # неверный IP
+
+  validation {
+    condition     = can(cidrhost("${var.ip}/32", 0)) && cidrhost("${var.ip}/32", 0) == var.ip
+    error_message = "Значение должно быть корректным IPv4-адресом, например 192.168.0.1."
+  }
+}
+*/
+/*
+variable "ips" {
+  type        = list(string)
+  description = "список ip-адресов"
+  default     = ["192.168.0.1", "1.1.1.1", "1270.0.0.1"]   # неверный список
+
+  validation {
+    condition = alltrue([
+      for ip in var.ips :
+      can(cidrhost("${ip}/32", 0)) && cidrhost("${ip}/32", 0) == ip
+    ])
+    error_message = "Все элементы списка должны быть корректными IPv4-адресами."
+  }
+}
+*/
