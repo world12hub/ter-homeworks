@@ -1,0 +1,24 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:world12hub/ter-homeworks
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	vscode-merge-base = origin/main
+[branch "terraform-05"]
+	remote = origin
+	merge = refs/heads/terraform-05
+	vscode-merge-base = origin/terraform-05
+[branch "terraform-hotfix"]
+	remote = origin
+	merge = refs/heads/terraform-hotfix
+	vscode-merge-base = origin/terraform-hotfix
+[branch "diploma"]
+	remote = origin
+	merge = refs/heads/diploma
+	vscode-merge-base = origin/main

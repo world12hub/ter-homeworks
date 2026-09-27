@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "vm" {
   hostname           = var.env_name == null ? "${var.instance_name}-${count.index}" : "${var.env_name}-${var.instance_name}-${count.index}"
   zone               = element(var.subnet_zones, count.index)
   service_account_id = var.service_account_id
-  description        = "${var.description} {{terraform yyy managed}}"
+  description        = var.description
   scheduling_policy {
     preemptible = var.preemptible
   }
@@ -51,14 +51,8 @@ resource "yandex_compute_instance" "vm" {
     security_group_ids = var.security_group_ids
   }
 
-  metadata = {
-    for k, v in var.metadata : k => v
-  }
-  
-  labels = {
-    for k, v in local.labels : k => v
-  }
-
+  metadata = var.metadata
+  labels   = local.labels
   allow_stopping_for_update = true
 
   lifecycle {

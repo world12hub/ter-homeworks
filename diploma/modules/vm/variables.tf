@@ -3,9 +3,9 @@ variable "env_name" {
   default = null
 }
 
-variable "network_id" {
-  type = string
-}
+#variable "network_id" {
+#  type = string
+#}
 
 variable "subnet_zones" {
   type = list(string)
@@ -72,7 +72,7 @@ variable "public_ip" {
 
 variable "known_internal_ip" {
   type    = string
-  default = ""
+  default = null
 }
 
 variable "image_family" {
