@@ -101,3 +101,8 @@ variable "labels" {
   type        = map(string)
   default = {}
 }
+
+variable "description" {
+  type    = string
+  default = "Managed by Terraform"
+}
