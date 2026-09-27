@@ -7,7 +7,7 @@ terraform {
   required_version = ">=1.15.0"
 }
 
-resource "yandex_vpc_security_group" "example" {
+resource "yandex_vpc_security_group" "this" {
   name       = var.sg_name
   network_id = var.network_id
 

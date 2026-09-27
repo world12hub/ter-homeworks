@@ -1,7 +1,7 @@
 output "network" {
-  value = yandex_vpc_network.develop.id
+  value = yandex_vpc_network.this.id
 }
 
 output "subnet" {
-  value = yandex_vpc_subnet.develop.id
+  value = yandex_vpc_subnet.this.id
 }
