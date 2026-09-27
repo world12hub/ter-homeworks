@@ -1,9 +1,3 @@
-variable "folder_id" {
-  type        = string
-  default     = null
-  description = "ID каталога; если null — берётся из провайдера"
-}
-
 variable "vpc_name" {
   type        = string
   default     = "develop"

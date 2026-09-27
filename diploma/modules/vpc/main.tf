@@ -11,9 +11,11 @@ terraform {
 resource "yandex_vpc_network" "develop" {
   name = var.vpc_name
 }
+
 resource "yandex_vpc_subnet" "develop" {
   name           = "${var.vpc_name}-subnet"
   network_id     = yandex_vpc_network.develop.id
   zone           = var.zone
   v4_cidr_blocks = var.v4_cidr_blocks
+  folder_id      = var.folder_id
 }
