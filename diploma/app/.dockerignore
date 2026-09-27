@@ -1,0 +1,16 @@
+.git
+.gitignore
+.terraform
+*.tfstate
+*.tfvars
+authorized_key.json
+venv
+.venv
+__pycache__
+*.pyc
+*.pyo
+.idea
+.vscode
+README.md
+Dockerfile
+.dockerignore
