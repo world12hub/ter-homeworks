@@ -1,7 +1,3 @@
-output "network" {
-  value = yandex_vpc_network.develop.id
-}
-
-output "subnet" {
-  value = yandex_vpc_subnet.develop.id
+output "sg_id" {
+  value = yandex_vpc_security_group.example.id
 }
