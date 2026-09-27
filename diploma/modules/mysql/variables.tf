@@ -37,6 +37,17 @@ variable "resource_preset_id" {
   description = "Пресет ресурсов"
 }
 
+variable "disk_type_id" {
+  type        = string
+  default     = "network-hdd"
+  description = "Тип диска: network-hdd / network-ssd / network-ssd-nonreplicated"
+
+  validation {
+    condition     = contains(["network-hdd", "network-ssd", "network-ssd-nonreplicated"], var.disk_type_id)
+    error_message = "disk_type_id должен быть одним из: network-hdd, network-ssd, network-ssd-nonreplicated."
+  }
+}
+
 variable "db_name" {
   type        = string
   default     = "appdb"

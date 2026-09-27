@@ -6,7 +6,7 @@ resource "yandex_mdb_mysql_cluster" "this" {
 
   resources {
     resource_preset_id = var.resource_preset_id
-    disk_type_id       = "network-ssd"
+    disk_type_id       = var.disk_type_id
     disk_size          = var.disk_size
   }
 
