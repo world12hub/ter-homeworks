@@ -1,23 +1,10 @@
-#создаем облачную сеть
-resource "yandex_vpc_network" "develop" {
-  name = var.vpc_name
-}
+module "vpc" {
+  source = "../../modules/vpc"
 
-#создаем подсеть
-resource "yandex_vpc_subnet" "develop_a" {
-  name           = local.subnet_name_develop_a
-  zone           = var.zone-a
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.cidr_develop_a
+  vpc_name       = "main-network"
+  zone           = var.zone
+  v4_cidr_blocks = ["10.0.1.0/24"]
 }
-
-resource "yandex_vpc_subnet" "develop_b" {
-  name           = local.subnet_name_develop_b
-  zone           = var.zone-b
-  network_id     = yandex_vpc_network.develop.id
-  v4_cidr_blocks = var.cidr_develop_b
-}
-
 
 module "test-vm" {
   source         = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
