@@ -39,4 +39,9 @@ variable "db_password" {
 variable "ssh_public_key" {
   type    = string
   description = "ssh public key"
+
+  validation {
+    condition     = var.ssh_public_key == null || can(regex("^ssh-(rsa|ed25519|dss) ", var.ssh_public_key))
+    error_message = "ssh_public_key должен быть null или валидным SSH-ключом (ssh-rsa / ssh-ed25519 / ssh-dss)."
+  }  
 }
