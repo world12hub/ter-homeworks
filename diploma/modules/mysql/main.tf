@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 1.15.0"
+}
+
 resource "yandex_mdb_mysql_cluster" "this" {
   name        = var.name
   environment = var.environment
