@@ -7,6 +7,8 @@ authorized_key.json
 venv
 .venv
 .env
+.env.*
+!.env.example
 __pycache__
 *.pyc
 *.pyo
