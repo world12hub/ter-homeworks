@@ -36,7 +36,7 @@ module "web_sg" {
 
 # security_group_egress не указан — используется default (ANY → 0.0.0.0/0)
 
-module "web-vm" {
+module "web_vm" {
   source         = "./modules/vm"
   env_name       = "dev"
   instance_name  = "web"

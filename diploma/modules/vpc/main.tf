@@ -17,5 +17,4 @@ resource "yandex_vpc_subnet" "this" {
   network_id     = yandex_vpc_network.this.id
   zone           = var.zone
   v4_cidr_blocks = var.v4_cidr_blocks
-  folder_id      = var.folder_id
 }
