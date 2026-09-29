@@ -71,6 +71,24 @@ module "web_vm" {
 }
 
 
+
+module "mysql_sg" {
+  source = "./modules/sg"
+
+  sg_name    = "mysql-sg"
+  network_id = module.vpc.vpc_id
+
+  security_group_ingress = [
+    {
+      protocol       = "TCP"
+      description    = "MySQL from web subnet"
+      v4_cidr_blocks = [module.vpc.subnet_cidr]
+      port           = 6432
+    },
+  ]
+}
+
+
 module "mysql" {
   source = "./modules/mysql"
 
@@ -83,6 +101,8 @@ module "mysql" {
   disk_type_id       = "network-hdd"
   disk_size          = 10
   db_password        = var.db_password
+
+  security_group_ids = [module.mysql_sg.sg_id]
 }
 
 module "container_registry" {

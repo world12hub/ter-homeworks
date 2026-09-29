@@ -51,7 +51,10 @@ resource "yandex_compute_instance" "vm" {
     security_group_ids = var.security_group_ids
   }
 
-  metadata = var.metadata
+  metadata = merge(var.metadata, {
+    serial-port-enable = 0
+  })
+
   labels   = local.labels
   allow_stopping_for_update = true
 

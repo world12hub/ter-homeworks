@@ -114,3 +114,9 @@ variable "db_password" {
     error_message = "Пароль должен быть от 8 до 128 символов."
   }
 }
+
+variable "security_group_ids" {
+  type        = list(string)
+  default     = []
+  description = "Список ID групп безопасности для кластера MySQL"
+}
