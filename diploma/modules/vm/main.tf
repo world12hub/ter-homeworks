@@ -20,9 +20,9 @@ data "yandex_compute_image" "my_image" {
 resource "yandex_compute_instance" "vm" {
   count = var.instance_count
 
-  name               = var.env_name == null ? "${var.instance_name}-${count.index}" : "${var.env_name}-${var.instance_name}-${count.index}"
+  name               = var.env_name == null ? "${var.instance_name}-${count.index + 1}" : "${var.env_name}-${var.instance_name}-${count.index + 1}"
   platform_id        = var.platform
-  hostname           = var.env_name == null ? "${var.instance_name}-${count.index}" : "${var.env_name}-${var.instance_name}-${count.index}"
+  hostname           = var.env_name == null ? "${var.instance_name}-${count.index + 1}" : "${var.env_name}-${var.instance_name}-${count.index + 1}"
   zone               = element(var.subnet_zones, count.index)
   service_account_id = var.service_account_id
   description        = var.description
