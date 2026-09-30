@@ -132,6 +132,17 @@
 
 **Задание 2.** Используя user-data (cloud-init), установите Docker и Docker Compose (см. Задания 5 модуля «Виртуализация и контейнеризация»).
 
+### Ответ
+
+Используя user-data (cloud-init) (описание в файле [cloud-init.yml](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/cloud-init.yml), установлены Docker и Docker Compose
+
+**Скриншот:**
+
+Вывод команды `docker --version` и `docker compose version`.
+
+<img width="408" height="78" alt="image" src="https://github.com/user-attachments/assets/64c6219f-c3e6-4c23-a0f4-9d78b58194fa" />
+
+
 **Задание 3.** Опишите Docker файл (см. Задания 5 «Виртуализация и контейнеризация») c web-приложением и сохраните контейнер в Container Registry.
 
 **Задание 4.** Завяжите работу приложения в контейнере на БД в Yandex Cloud.
