@@ -87,8 +87,8 @@
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_compute_instance | [vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm) | dev-web-1 | Создает виртуальную машину | 
-| yandex_compute_image |[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| ubuntu-2004-lts | Копирует этот образ на новый диск | 
+| `yandex_compute_instance` | [vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm) | `dev-web-1` | Создает виртуальную машину | 
+| `yandex_compute_image`|[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| `ubuntu-2004-lts` | Копирует этот образ на новый диск | 
 
 **Скриншот:**
 
