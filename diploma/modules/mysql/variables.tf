@@ -120,3 +120,9 @@ variable "security_group_ids" {
   default     = []
   description = "Список ID групп безопасности для кластера MySQL"
 }
+
+variable "db_user_roles" {
+  type        = list(string)
+  default     = ["ALL"]
+  description = "Роли пользователя БД"
+}

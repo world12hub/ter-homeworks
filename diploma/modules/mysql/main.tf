@@ -42,5 +42,5 @@ resource "yandex_mdb_mysql_user" "this" {
 
   permission {
     database_name = yandex_mdb_mysql_database.this.name
-  }
+    roles         = var.db_user_roles
 }
