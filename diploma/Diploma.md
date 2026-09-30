@@ -107,10 +107,12 @@
 
 <img width="879" height="328" alt="image" src="https://github.com/user-attachments/assets/7cf954d7-cc27-48e6-80ca-9bbb941527b2" />
 
-- Опишите создание БД MySQL в Yandex Cloud.
-  | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
+- Описано создание БД MySQL в Yandex Cloud.
+
+| Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_vpc_network | vpc | main-network | Создает облачную сеть | 
+| yandex_mdb_mysql_cluster | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | mysql-cluster | Создает облачную сеть |
+ 
 
 **Скриншот:**
 
