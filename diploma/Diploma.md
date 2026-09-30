@@ -118,6 +118,8 @@
 
 **Скриншот:**
 
+<img width="918" height="155" alt="image" src="https://github.com/user-attachments/assets/01fd7142-8040-46e9-a652-8075e696b3b9" />
+
 - Опишите создание Container Registry.
   
   | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
