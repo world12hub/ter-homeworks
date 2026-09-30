@@ -91,15 +91,19 @@
 |:---|:---|:---|:---|:---|
 | 1 | `yandex_compute_instance` | [vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm) | `dev-web-1` | Создает виртуальную машину | 
 | 2 | `yandex_compute_image`|[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| `ubuntu-2004-lts` | Копирует этот образ на новый диск |
-| 3 | `yandex_vpc_security_group`|[sg](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/sg)| `web-sg` | Создает группу безапосности | 
+| 3 | `yandex_vpc_security_group`|[sg](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/sg)| `web-sg` | Создает группу безопасности | 
 
 
 **Скриншот:**
 
+**1**
+
 <img width="1621" height="155" alt="image" src="https://github.com/user-attachments/assets/41a6c4c3-9661-4276-be1e-5271d8b7052e" />
 
+**2**
 <img width="951" height="468" alt="image" src="https://github.com/user-attachments/assets/716f07c4-c8fd-4a48-ae19-64ba8880a548" />
 
+**3**
 
 <img width="879" height="328" alt="image" src="https://github.com/user-attachments/assets/7cf954d7-cc27-48e6-80ca-9bbb941527b2" />
 
