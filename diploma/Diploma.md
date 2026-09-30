@@ -61,7 +61,7 @@
 
 ### Ответ
 
-- Создана Virtual Private Cloud (VPC).
+- Создана Virtual Private Cloud (VPC) (описание в файле [main.tf](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/main.tf)).
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |:---|:---|:---|:---|
@@ -71,7 +71,7 @@
 
 <img width="910" height="138" alt="image" src="https://github.com/user-attachments/assets/96a2c978-2291-4a2a-991c-38eca6c86df0" />
 
-- Создана подсеть.
+- Создана подсеть (описание в файле [main.tf](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/main.tf)).
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |:---|:---|:---|:---|
@@ -83,7 +83,7 @@
 
 
 
-- Создана виртуальной машины (VM):
+- Создана виртуальной машины (VM) (описание в файле [main.tf](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/main.tf)):
   - Настроены группы безопасности (порты 22, 80, 443).
   - Привязана группа безопасности к VM.
 
@@ -107,7 +107,7 @@
 
 <img width="879" height="328" alt="image" src="https://github.com/user-attachments/assets/7cf954d7-cc27-48e6-80ca-9bbb941527b2" />
 
-- Описано создание БД MySQL в Yandex Cloud.
+- Описано создание БД MySQL в Yandex Cloud, в файле [main.tf](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/main.tf).
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
