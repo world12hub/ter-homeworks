@@ -111,9 +111,9 @@
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_mdb_mysql_cluster | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | mysql-cluster | Создание кластера MySQL |
-| yandex_mdb_mysql_database | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | sensitive value | Создание БД MySQL |
-| yandex_mdb_mysql_user | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | sensitive value | Создание пользователя БД MySQL |
+| `yandex_mdb_mysql_cluster` | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | `mysql-cluster` | Создание кластера MySQL |
+| `yandex_mdb_mysql_database` | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | sensitive value | Создание БД MySQL |
+| `yandex_mdb_mysql_user` | [mysql](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | sensitive value | Создание пользователя БД MySQL |
  
 
 **Скриншот:**
