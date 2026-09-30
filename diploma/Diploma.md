@@ -151,16 +151,19 @@
 
 **Выполнены следующие команды:**
 
-**1. Аутентификация в реестре**
+**1.** Аутентификация в реестре
+
 `yc iam create-token | docker login --username iam --password-stdin cr.yandex`
 
-**2. Сборка образа**
+**2.** Сборка образа
+
 `docker build -f Dockerfile.python -t cr.yandex/crp0p18l1l7840en4slg/app:latest .`
 
-**3. Push**
+**3.** Push
+
 `docker push cr.yandex/crp0p18l1l7840en4slg/app:latest`
 
-**4. Проверка:**
+**4.** Проверка:
    
 `yc container image list --registry-id crp0p18l1l7840en4slg`
 
