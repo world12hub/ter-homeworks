@@ -64,7 +64,7 @@
 - Создана Virtual Private Cloud (VPC).
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | `yandex_vpc_network` | [vpc](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vpc) | `main-network` | Создает облачную сеть | 
 
 **Скриншот:**
