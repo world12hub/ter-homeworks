@@ -63,9 +63,9 @@
 
 - Создана Virtual Private Cloud (VPC).
 
-| Terraform-ресурс | Модуль | Имя ресурса | Что делает |
-|---|---|---|---|
-| `yandex_vpc_network` | [vpc](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vpc) | `main-network` | Создает облачную сеть | 
+| № п/п| Terraform-ресурс | Модуль | Имя ресурса | Что делает |
+|---|---|---|---|---|
+| 1 | `yandex_vpc_network` | [vpc](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vpc) | `main-network` | Создает облачную сеть | 
 
 **Скриншот:**
 
@@ -84,32 +84,24 @@
 
 
 - Создана виртуальной машины (VM):
+  - Настроены группы безопасности (порты 22, 80, 443).
+  - Привязана группа безопасности к VM.
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
 | `yandex_compute_instance` | [vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm) | `dev-web-1` | Создает виртуальную машину | 
-| `yandex_compute_image`|[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| `ubuntu-2004-lts` | Копирует этот образ на новый диск | 
+| `yandex_compute_image`|[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| `ubuntu-2004-lts` | Копирует этот образ на новый диск |
+| `yandex_vpc_security_group`|[sg](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/sg)| `web-sg` | Создает группу безапосности | 
+
 
 **Скриншот:**
 
 <img width="1621" height="155" alt="image" src="https://github.com/user-attachments/assets/41a6c4c3-9661-4276-be1e-5271d8b7052e" />
 
-  - Настройте группы безопасности (порты 22, 80, 443).
-
- | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
-|---|---|---|---|
-| yandex_vpc_network | vpc | main-network | Создает облачную сеть | 
-
-**Скриншот:**
+<img width="951" height="468" alt="image" src="https://github.com/user-attachments/assets/716f07c4-c8fd-4a48-ae19-64ba8880a548" />
 
 
-  - Привяжите группу безопасности к VM.
-   | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
-|---|---|---|---|
-| yandex_vpc_network | vpc | main-network | Создает облачную сеть | 
-
-**Скриншот:**
-
+<img width="879" height="328" alt="image" src="https://github.com/user-attachments/assets/7cf954d7-cc27-48e6-80ca-9bbb941527b2" />
 
 - Опишите создание БД MySQL в Yandex Cloud.
   | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
