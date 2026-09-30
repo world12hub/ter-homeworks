@@ -124,7 +124,7 @@
  
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_container_registry | [container_registry](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | app-registry | Создает Container Registry | 
+| `yandex_container_registry` | [container_registry](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | app-registry | Создает Container Registry | 
 
 **Скриншот:**
 
