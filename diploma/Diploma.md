@@ -173,6 +173,25 @@
 
 **Задание 4.** Завяжите работу приложения в контейнере на БД в Yandex Cloud.
 
+### Ответ к заданию 4
+
+Выполнены следующие команды:
+
+1. Логин в Container Registry
+
+`yc iam create-token | docker login --username iam --password-stdin cr.yandex`
+
+2.  Скачивание образа из реестра
+
+`docker pull cr.yandex/crp0p18l1l7840en4slg/app:/latest`
+
+3. Запуск
+
+docker compose up -d
+
+<img width="415" height="79" alt="image" src="https://github.com/user-attachments/assets/e6e4cd63-9877-41ba-b68f-932e32222273" />
+
+
 **Задание 5***. Положите пароли от БД в LockBox и настройте интеграцию с Terraform так, чтобы пароль для БД брался из LockBox.
  
 
