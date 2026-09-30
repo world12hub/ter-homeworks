@@ -58,7 +58,7 @@ module "web_vm" {
 
 
   metadata = {
-    user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
+    user-data          = data.template_file.cloudinit.rendered
     serial-port-enable = 1
   }
 
