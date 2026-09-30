@@ -120,13 +120,15 @@
 
 <img width="918" height="155" alt="image" src="https://github.com/user-attachments/assets/01fd7142-8040-46e9-a652-8075e696b3b9" />
 
-- Опишите создание Container Registry.
-  
-  | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
+- Cоздан Container Registry (описание в файле [main.tf](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/main.tf)).
+ 
+| Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_vpc_network | vpc | main-network | Создает облачную сеть | 
+| yandex_container_registry | [container_registry](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/mysql) | app-registry | Создает Container Registry | 
 
 **Скриншот:**
+
+<img width="821" height="252" alt="image" src="https://github.com/user-attachments/assets/6d40667a-55eb-4116-b5fd-f3bfdf1ec94b" />
 
 **Задание 2.** Используя user-data (cloud-init), установите Docker и Docker Compose (см. Задания 5 модуля «Виртуализация и контейнеризация»).
 
