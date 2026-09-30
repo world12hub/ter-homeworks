@@ -79,6 +79,8 @@
 
 **Скриншот:**
 
+<img width="736" height="112" alt="image" src="https://github.com/user-attachments/assets/2651a045-4c30-4acf-8b71-1fbd2e642aa1" />
+
 
 - Создайте виртуальные машины (VM):
 
