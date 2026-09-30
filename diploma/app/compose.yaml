@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.python
-    image: cr.yandex/<registry_id>/app:latest
+    image: cr.yandex/crp0p18l1l7840en4slg/app:latest
     container_name: web-app
     restart: always
     ports:
