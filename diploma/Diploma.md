@@ -63,9 +63,13 @@
 
 - Создана Virtual Private Cloud (VPC).
 
-| Terraform-ресурс | Название ресурса | Что делает |
+| Ресурс | Параметры | Terraform | Что делает |
 |---|---|---|
-| yandex_vpc_network 1    | Ячейка 2    | Ячейка 3    |
+| VPC | main-network    | yandex_vpc_network   | Создает облачную сеть | 
+
+**Скриншот:**
+
+<img width="910" height="138" alt="image" src="https://github.com/user-attachments/assets/96a2c978-2291-4a2a-991c-38eca6c86df0" />
 
 
 **Задание 2.** Используя user-data (cloud-init), установите Docker и Docker Compose (см. Задания 5 модуля «Виртуализация и контейнеризация»).
