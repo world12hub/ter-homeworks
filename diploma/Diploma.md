@@ -75,7 +75,7 @@
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_vpc_network | vpc | main-network | Создает облачную сеть | 
+| `yandex_vpc_subnet` | [vpc](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vpc) | `main-network-subnet` | Создает подсеть | 
 
 **Скриншот:**
 
