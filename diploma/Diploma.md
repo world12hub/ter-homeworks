@@ -90,7 +90,7 @@
 | №| Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |:---|:---|:---|:---|:---|
 | 1 | `yandex_compute_instance` | [vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm) | `dev-web-1` | Создает виртуальную машину | 
-| 2 | `yandex_compute_image`|[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| `ubuntu-2004-lts` | Копирует этот образ на новый диск |
+| 2 | `yandex_compute_image`|[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| `ubuntu-2004-lts` | Копирует образ на новый диск |
 | 3 | `yandex_vpc_security_group`|[sg](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/sg)| `web-sg` | Создает группу безопасности | 
 
 
