@@ -83,13 +83,16 @@
 
 
 
-- Создайте виртуальные машины (VM):
+- Создана виртуальной машины (VM):
 
 | Terraform-ресурс | Модуль | Имя ресурса | Что делает |
 |---|---|---|---|
-| yandex_vpc_network | vpc | main-network | Создает облачную сеть | 
+| yandex_compute_instance | [vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm) | dev-web-1 | Создает виртуальную машину | 
+| yandex_compute_image |[vm](https://github.com/world12hub/ter-homeworks/tree/diploma/diploma/modules/vm)| ubuntu-2004-lts | Копирует этот образ на новый диск | 
 
 **Скриншот:**
+
+<img width="1621" height="155" alt="image" src="https://github.com/user-attachments/assets/41a6c4c3-9661-4276-be1e-5271d8b7052e" />
 
   - Настройте группы безопасности (порты 22, 80, 443).
 
