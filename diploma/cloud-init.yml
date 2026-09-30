@@ -10,6 +10,7 @@ users:
 package_update: true
 package_upgrade: false
 packages:
+  - nginx
   - apt-transport-https
   - ca-certificates
   - curl
@@ -32,5 +33,6 @@ runcmd:
   # Включаем и запускаем Docker
   - systemctl enable --now docker
 
+  - systemctl enable --now nginx
   # Включаем fail2ban (защита от брутфорса SSH)
   - systemctl enable --now fail2ban
