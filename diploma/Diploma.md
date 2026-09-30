@@ -59,7 +59,7 @@
 - Опишите создание БД MySQL в Yandex Cloud.
 - Опишите создание Container Registry.
 
-### Ответ
+### Ответ к заданию 1
 
 - Создана Virtual Private Cloud (VPC) (описание в файле [main.tf](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/main.tf)).
 
@@ -132,7 +132,7 @@
 
 **Задание 2.** Используя user-data (cloud-init), установите Docker и Docker Compose (см. Задания 5 модуля «Виртуализация и контейнеризация»).
 
-### Ответ
+### Ответ к заданию 2
 
 Используя user-data (cloud-init) (описание в файле [cloud-init.yml](https://github.com/world12hub/ter-homeworks/blob/diploma/diploma/cloud-init.yml), установлены Docker и Docker Compose
 
@@ -142,8 +142,31 @@
 
 <img width="408" height="78" alt="image" src="https://github.com/user-attachments/assets/64c6219f-c3e6-4c23-a0f4-9d78b58194fa" />
 
-
 **Задание 3.** Опишите Docker файл (см. Задания 5 «Виртуализация и контейнеризация») c web-приложением и сохраните контейнер в Container Registry.
+
+### Ответ к заданию 3
+
+1. Описан Docker файл c web-приложением (описание в файле [Dockerfile.python](https://github.com/world12hub/ter-homeworks/edit/diploma/diploma/app/Dockerfile.python))
+2. Cохранен контейнер c web-приложением в Container Registry.
+
+**Выполнены следующие команды:**
+
+**1. Аутентификация в реестре**
+`yc iam create-token | docker login --username iam --password-stdin cr.yandex`
+
+**2. Сборка образа**
+`docker build -f Dockerfile.python -t cr.yandex/crp0p18l1l7840en4slg/app:latest .`
+
+**3. Push**
+`docker push cr.yandex/crp0p18l1l7840en4slg/app:latest`
+
+**4. Проверка:**
+   
+`yc container image list --registry-id crp0p18l1l7840en4slg`
+
+**Скриншот:**
+
+<img width="1107" height="160" alt="image" src="https://github.com/user-attachments/assets/267f1957-6028-4b5f-9329-9397c8e71126" />
 
 **Задание 4.** Завяжите работу приложения в контейнере на БД в Yandex Cloud.
 
