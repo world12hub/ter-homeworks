@@ -30,3 +30,8 @@ output "registry_id" {
 # output "cr_repository_name" {
 #   value = module.container_registry.repository_name
 # }
+
+output "mysql_host_fqdn" {
+  value       = module.mysql.host_fqdn
+  description = "FQDN хоста MySQL для подключения приложения"
+}
