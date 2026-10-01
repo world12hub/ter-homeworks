@@ -195,7 +195,7 @@ docker compose up -d
 
 **Web-страница:**
 
-<img width="952" height="411" alt="image" src="https://github.com/user-attachments/assets/48a9b87b-5d37-41ac-a612-e1afb50d9c4f" />
+<img width="863" height="380" alt="image" src="https://github.com/user-attachments/assets/9336cf6b-d5fd-4f07-8b7a-fc3a3dbca1c3" />
 
 
 **Задание 5***. Положите пароли от БД в LockBox и настройте интеграцию с Terraform так, чтобы пароль для БД брался из LockBox.
