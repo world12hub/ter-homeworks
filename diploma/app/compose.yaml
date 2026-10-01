@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.python
     image: cr.yandex/crp0p18l1l7840en4slg/app:latest
     container_name: web-app
-    restart: always
+    restart: unless-stopped
     ports:
       - "127.0.0.1:5000:5000"
     environment:

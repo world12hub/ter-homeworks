@@ -59,11 +59,11 @@ module "web_vm" {
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = 1
+    serial-port-enable = 0
   }
 
   labels = { 
-    owner= "s.kanyugin",
+    owner= "s-kanyugin",
     project = "devops"
      }
   description = "Web VM for learning project"

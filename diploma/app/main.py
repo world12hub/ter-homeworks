@@ -13,6 +13,7 @@ db_host = os.environ.get('DB_HOST', '127.0.0.1')
 db_user = os.environ.get('DB_USER', 'app')
 db_password = os.environ.get('DB_PASSWORD', 'very_strong')
 db_name = os.environ.get('DB_NAME', 'example')
+db_port = int(os.environ.get('DB_PORT', 6432))
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -45,6 +46,7 @@ def get_db_connection():
     try:
         db = mysql.connector.connect(
             host=db_host,
+            port=db_port,
             user=db_user,
             password=db_password,
             database=db_name
