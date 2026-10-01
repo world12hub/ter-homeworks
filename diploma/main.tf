@@ -83,7 +83,7 @@ module "mysql_sg" {
       protocol       = "TCP"
       description    = "MySQL from web subnet"
       v4_cidr_blocks = ["10.0.1.0/24"]
-      port           = 6432
+      port           = 3306
     },
   ]
 }
