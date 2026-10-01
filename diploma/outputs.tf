@@ -18,15 +18,15 @@ output "mysql_cluster_id" {
   description = "ID кластера MySQL"
 }
 
-output "mysql_host_fqdn" {
-  value = module.mysql.host_fqdn
-}
+# output "mysql_host_fqdn" {
+#   value = module.mysql.host_fqdn
+# }
 
 output "registry_id" {
   value       = module.container_registry.registry_id
   description = "ID Container Registry"
 }
 
-output "cr_repository_name" {
-  value = module.container_registry.repository_name
-}
+# output "cr_repository_name" {
+#   value = module.container_registry.repository_name
+# }
