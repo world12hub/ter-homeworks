@@ -37,6 +37,8 @@ write_files:
       </head>
       <body>
         <h1>Дипломный проект</h1>
+        <h2>Студент: Канюгин Сергей Борисович</h2>
+        <h3>Репозиторий: https://github.com/world12hub/ter-homeworks/tree/main/diploma</h3>
         <p>Данные из БД:</p>
         <pre id="output">Загрузка...</pre>
         <script>
