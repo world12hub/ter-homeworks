@@ -271,7 +271,7 @@ docker compose up -d
 
 ### Ответ:
 
-В файл [cloud-init.yml](https://github.com/world12hub/ter-homeworks/edit/diploma/diploma/cloud-init.yml) у grpoups изменен ключ на [sudo, docker]
+В файл [cloud-init.yml](https://github.com/world12hub/ter-homeworks/edit/diploma/diploma/cloud-init.yml) у groups изменен ключ на [sudo, docker]
 
 
 3. Деплой вручную. Приложение поднимается руками: login, pull, compose up, .env с паролем БД создаётся на ВМ вручную. Это допустимо. Но было бы красивее, если бы cloud-init сам клал compose.yaml и .env (пароль из random_password/переменной через templatefile) и поднимал контейнер.
