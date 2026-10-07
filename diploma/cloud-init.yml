@@ -1,7 +1,7 @@
 #cloud-config
 users:
   - name: ${username}
-    groups: sudo
+    groups: [sudo, docker]
     shell: /bin/bash
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     groups: docker
