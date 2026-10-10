@@ -4,7 +4,6 @@ users:
     groups: [sudo, docker]
     shell: /bin/bash
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
-    groups: docker
     ssh_authorized_keys:
       - ${ssh_public_key}
 package_update: true
