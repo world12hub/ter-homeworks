@@ -3,70 +3,48 @@ module "vpc" {
 
   vpc_name       = "main-network"
   zone           = var.zone
-  v4_cidr_blocks = ["10.0.1.0/24"]
+  v4_cidr_blocks = var.vpc_cidr_blocks
 }
 
 module "web_sg" {
   source = "./modules/sg"
 
-  sg_name    = "web-sg"
+  sg_name    = var.web_sg_name
   network_id = module.vpc.vpc_id
 
-  security_group_ingress = [
-    {
-      protocol       = "TCP"
-      description    = "SSH"
-      v4_cidr_blocks = ["0.0.0.0/0"]
-      port           = 22
-    },
-    {
-      protocol       = "TCP"
-      description    = "HTTP"
-      v4_cidr_blocks = ["0.0.0.0/0"]
-      port           = 80
-    },
-    {
-      protocol       = "TCP"
-      description    = "HTTPS"
-      v4_cidr_blocks = ["0.0.0.0/0"]
-      port           = 443
-    },
-  ]
+  security_group_ingress = var.web_sg_ingress
 }
 
 # security_group_egress не указан — используется default (ANY → 0.0.0.0/0)
 
 module "web_vm" {
   source         = "./modules/vm"
-  env_name       = "dev"
-  instance_name  = "web"
-  instance_count = 1
+  env_name       = var.env_name
+  instance_name  = var.web_instance_name
+  instance_count = var.web_instance_count
   
   subnet_zones   = [var.zone]
   subnet_ids     = [module.vpc.subnet_id]
 
-  image_family   = "ubuntu-2004-lts"
-  public_ip      = true
-  platform       = "standard-v3"
-  instance_cores = 2
-  instance_memory = 2
-  instance_core_fraction = 20
-  boot_disk_type         = "network-hdd"
-  boot_disk_size         = 10
+  image_family   = var.web_image_family
+  public_ip      = var.web_public_ip
+  platform       = var.web_platform
+  instance_cores = var.web_instance_cores
+  instance_memory = var.web_instance_memory
+  instance_core_fraction = var.web_instance_core_fraction
+  boot_disk_type         = var.web_boot_disk_type
+  boot_disk_size         = var.web_boot_disk_size
 
   security_group_ids = [module.web_sg.sg_id]
 
 
   metadata = {
     user-data          = data.template_file.cloudinit.rendered
-    serial-port-enable = 0
+    serial-port-enable = var.serial_port_enable
   }
 
-  labels = { 
-    owner= "s-kanyugin",
-    project = "devops"
-     }
-  description = "Web VM for learning project"
+  labels = var.web_labels
+  description = var.web_description
   
 }
 
@@ -75,31 +53,25 @@ module "web_vm" {
 module "mysql_sg" {
   source = "./modules/sg"
 
-  sg_name    = "mysql-sg"
+  sg_name    = var.mysql_sg_name
   network_id = module.vpc.vpc_id
 
-  security_group_ingress = [
-    {
-      protocol       = "TCP"
-      description    = "MySQL from web subnet"
-      v4_cidr_blocks = ["10.0.1.0/24"]
-      port           = 3306
-    },
-  ]
+  security_group_ingress = var.mysql_sg_ingress
+ 
 }
 
 
 module "mysql" {
   source = "./modules/mysql"
 
-  name               = "mysql-cluster"
+  name               = var.mysql_name
   network_id         = module.vpc.vpc_id
   subnet_id          = module.vpc.subnet_id
   zone               = var.zone
-  environment        = "PRESTABLE"
-  resource_preset_id = "b1.medium"
-  disk_type_id       = "network-hdd"
-  disk_size          = 10
+  environment        = var.mysql_environment
+  resource_preset_id = var.mysql_resource_preset_id
+  disk_type_id       = var.mysql_disk_type_id
+  disk_size          = var.mysql_disk_size
   db_password        = var.db_password
 
   security_group_ids = [module.mysql_sg.sg_id]
@@ -108,7 +80,7 @@ module "mysql" {
 module "container_registry" {
   source = "./modules/container_registry"
 
-  name = "app-registry"
+  name = var.registry_name
 }
 
 
