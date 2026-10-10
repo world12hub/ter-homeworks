@@ -259,13 +259,9 @@ docker compose up -d
 
 1. Хардкод. В вызовах модулей в main.tf захардкожены CIDR 10.0.1.0/24 (в двух местах), resource_preset_id, имена и размеры дисков. А в locals.tf лежат locals, которые нигде не используются.
 
-**Скриншот:**
-
-
-
 ### Ответ:
 
-
+В [main.tf](https://github.com/world12hub/ter-homeworks/edit/diploma/diploma/main.tf) и [variables.tf](https://github.com/world12hub/ter-homeworks/edit/diploma/diploma/variables.tf) внесены соответствующие изменения. 
 
 2. cloud-init. Ключ groups указан у пользователя дважды (sudo и docker). В YAML побеждает последний, так что в группу sudo пользователь не попадает. Нужно groups: [sudo, docker]
 
