@@ -253,6 +253,10 @@ docker compose up -d
 
 В файл [providers.tf](https://github.com/world12hub/ter-homeworks/edit/diploma/diploma/providers.tf) добавлен атрибут с **remote state** и **state locking**
 
+**Скриншот:**
+
+<img width="723" height="204" alt="image" src="https://github.com/user-attachments/assets/2cfc2a0d-97a4-4490-9aff-42ce67dcf1d0" />
+
 ---
 
 ну и мелочь:
