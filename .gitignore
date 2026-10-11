@@ -13,5 +13,5 @@ personal.auto.tfvars
 
 
 terraform.tfvars
-
+.env
 tfplan

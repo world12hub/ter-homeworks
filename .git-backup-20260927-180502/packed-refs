@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+121e712bd93c27eb1feca12df8150fc20d6730f9 refs/heads/main
+df9518db06fcaf85040573d3c78128e6d7e7b3dd refs/heads/terraform-05
+f001f50c293d88cb3ef33b2894bf1e6355676b12 refs/heads/terraform-hotfix
+121e712bd93c27eb1feca12df8150fc20d6730f9 refs/remotes/origin/main
+ba9d5338a5f1a0a8ff5e4d5376503eebf196dd3a refs/remotes/origin/terraform-04
+df9518db06fcaf85040573d3c78128e6d7e7b3dd refs/remotes/origin/terraform-05
+f001f50c293d88cb3ef33b2894bf1e6355676b12 refs/remotes/origin/terraform-hotfix

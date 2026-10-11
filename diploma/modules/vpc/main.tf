@@ -8,12 +8,13 @@ terraform {
 }
 
 
-resource "yandex_vpc_network" "develop" {
+resource "yandex_vpc_network" "this" {
   name = var.vpc_name
 }
-resource "yandex_vpc_subnet" "develop" {
-  name           = "${var.vpc_name}-subnet-${var.zone}"
+
+resource "yandex_vpc_subnet" "this" {
+  name           = "${var.vpc_name}-subnet"
+  network_id     = yandex_vpc_network.this.id
   zone           = var.zone
-  network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.v4_cidr_blocks
 }
